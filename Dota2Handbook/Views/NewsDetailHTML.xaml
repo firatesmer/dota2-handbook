@@ -1,0 +1,73 @@
+﻿<Page
+    x:Class="Dota2Handbook.Views.NewsDetailHTML"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Behaviors="using:Template10.Behaviors"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:controls="using:Template10.Controls"
+    xmlns:AppStudio="using:AppStudio.Uwp.Controls"
+    xmlns:vm ="using:Dota2Handbook.ViewModels"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:NewsItemDetailHTMLViewModel x:Name="ViewModel" />
+    </Page.DataContext>
+
+    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <controls:PageHeader x:Name="pageHeader" 
+                             x:Uid="Detail" 
+                             Text="{x:Bind ViewModel.PageHeaderTitle}"
+                             Height="48"
+                             IsDynamicOverflowEnabled="False">
+            <RelativePanel.AlignTopWithPanel>True</RelativePanel.AlignTopWithPanel>
+            <RelativePanel.AlignRightWithPanel>True</RelativePanel.AlignRightWithPanel>
+            <RelativePanel.AlignLeftWithPanel>True</RelativePanel.AlignLeftWithPanel>
+            <controls:PageHeader.PrimaryCommands>
+                <AppBarSeparator Foreground="LightGray"
+                                 Margin="10,2,0,0"/>
+                <AppBarButton x:Uid="Share"
+                              Click="{x:Bind ViewModel.Share}">
+                    <AppBarButton.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets"
+                                  Glyph="&#xE72D;"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+            </controls:PageHeader.PrimaryCommands>
+            <controls:PageHeader.SecondaryCommands>
+                <AppBarButton Click="{x:Bind ViewModel.GotoSettings}" 
+                              x:Uid="Settings"  />
+                <AppBarButton Click="{x:Bind ViewModel.GotoPin}" 
+                              x:Uid="Pin2"  />
+                <AppBarButton Click="{x:Bind ViewModel.GotoAbout}"
+                              x:Uid="About" />
+                <AppBarButton Click="{x:Bind ViewModel.GoToVersionHistory}"
+                              x:Uid="VersionHistory" />
+            </controls:PageHeader.SecondaryCommands>
+            <Interactivity:Interaction.Behaviors>
+                <Behaviors:EllipsisBehavior Visibility="Auto" />
+            </Interactivity:Interaction.Behaviors>
+        </controls:PageHeader>
+
+        <ScrollViewer RelativePanel.Below="pageHeader" 
+                      RelativePanel.AlignLeftWithPanel="True" 
+                      RelativePanel.AlignRightWithPanel="True" 
+                      RelativePanel.AlignBottomWithPanel="True">
+            <Grid x:Name="Container"
+                  Margin="10,5,10,5">
+                <StackPanel> 
+                    <TextBlock Text="{x:Bind ViewModel.ContentTitle}"
+                               Style="{StaticResource SubtitleTextBlockStyle}"
+                               FontWeight="Bold"
+                               TextWrapping="WrapWholeWords"/>
+                    <Rectangle HorizontalAlignment="Stretch" 
+                               Height="2"
+                               Margin="0,10,0,10"
+                               Fill="LightGray"/>
+                    <AppStudio:HtmlBlock Source="{x:Bind ViewModel.HTMLData}"/>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </RelativePanel>
+</Page>

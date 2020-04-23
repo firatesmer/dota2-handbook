@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="Dota2Handbook.Views.Leaderboards"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Template10.Controls"
+    xmlns:vm ="using:Dota2Handbook.ViewModels"
+    xmlns:ut ="using:Dota2Handbook.Utilities"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:LeaderboardsViewModel x:Name="ViewModel" />
+    </Page.DataContext>
+
+    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <controls:PageHeader x:Name="pageHeader"
+                             x:Uid="World_Leaderboards">
+            <RelativePanel.AlignTopWithPanel>True</RelativePanel.AlignTopWithPanel>
+            <RelativePanel.AlignRightWithPanel>True</RelativePanel.AlignRightWithPanel>
+            <RelativePanel.AlignLeftWithPanel>True</RelativePanel.AlignLeftWithPanel>
+            <controls:PageHeader.PrimaryCommands>
+                <AppBarButton x:Uid="PinIcon"
+                              Click="{x:Bind ViewModel.Pin}">
+                    <AppBarButton.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets"
+                                  Glyph="&#xE718;"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+            </controls:PageHeader.PrimaryCommands>
+            <controls:PageHeader.SecondaryCommands>
+                <AppBarButton Click="{x:Bind ViewModel.GotoSettings}" 
+                              x:Uid="Settings"  />
+                <AppBarButton Click="{x:Bind ViewModel.GotoPin}" 
+                              x:Uid="Pin2"  />
+                <AppBarButton Click="{x:Bind ViewModel.GotoAbout}"
+                              x:Uid="About" />
+                <AppBarButton Click="{x:Bind ViewModel.GoToVersionHistory}"
+                              x:Uid="VersionHistory" />
+            </controls:PageHeader.SecondaryCommands>
+        </controls:PageHeader>
+
+        <Grid RelativePanel.Below="pageHeader" 
+              RelativePanel.AlignLeftWithPanel="True" 
+              RelativePanel.AlignRightWithPanel="True"
+              RelativePanel.AlignBottomWithPanel="True">
+            <WebView x:Name="wV"
+                     ut:WebViewExtensions.UriSource="{Binding ItemUrl}"/>
+        </Grid>
+    </RelativePanel>
+</Page>

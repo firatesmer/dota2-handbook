@@ -1,0 +1,260 @@
+﻿<Page
+    x:Class="Dota2Handbook.Views.ItemDetail"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm ="using:Dota2Handbook.ViewModels"
+    xmlns:data="using:Dota2Handbook.Data"
+    xmlns:controls="using:Template10.Controls"
+    xmlns:converters="using:Dota2Handbook.Converters"
+    xmlns:AppStudio="using:AppStudio.Uwp.Controls"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:ItemDetailViewModel x:Name="ViewModel" />
+    </Page.DataContext>
+
+    <Page.Resources>
+        <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter"/>
+        <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+
+        <DataTemplate x:Key="BuildsFromList" 
+                      x:DataType="data:Item">
+            <Grid>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel>
+                        <Image Height="64"
+                               Width="85"
+                               Source="{x:Bind Image}"
+                               VerticalAlignment="Top"
+                               Margin="0,0,10,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{x:Bind localized_name}"
+                                   TextWrapping="Wrap"
+                                   FontSize="14"
+                                   Style="{StaticResource CaptionTextBlockStyle}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                            <Image Source="/Assets/gold.png"
+                               Width="22"
+                               Height="22"
+                               Margin="0,0,10,0"
+                               VerticalAlignment="Top"/>
+                            <TextBlock Text="{x:Bind cost}"
+                                       TextWrapping="Wrap"
+                                       FontSize="14"
+                                       Style="{StaticResource CaptionTextBlockStyle}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="BuildsIntoList"
+                      x:DataType="data:Item">
+            <Grid>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel>
+                        <Image Height="64"
+                               Width="85"
+                               Source="{x:Bind Image}"
+                               VerticalAlignment="Top"
+                               Margin="0,0,10,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{x:Bind localized_name}"
+                                   TextWrapping="Wrap"
+                                   FontSize="14"
+                                   Style="{StaticResource CaptionTextBlockStyle}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" 
+                                    Margin="0,10,0,0">
+                            <Image Source="/Assets/gold.png"
+                               Width="22"
+                               Height="22"
+                               Margin="0,0,10,0"
+                               VerticalAlignment="Top"/>
+                            <TextBlock Text="{x:Bind cost}"
+                                   TextWrapping="Wrap"
+                                   FontSize="14"
+                                   Style="{StaticResource CaptionTextBlockStyle}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <controls:PageHeader x:Name="pageHeader"
+                             Text="{x:Bind ViewModel.SelectedItemData.dname}">
+            <RelativePanel.AlignTopWithPanel>True</RelativePanel.AlignTopWithPanel>
+            <RelativePanel.AlignRightWithPanel>True</RelativePanel.AlignRightWithPanel>
+            <RelativePanel.AlignLeftWithPanel>True</RelativePanel.AlignLeftWithPanel>
+            <controls:PageHeader.SecondaryCommands>
+                <AppBarButton Click="{x:Bind ViewModel.GotoSettings}" 
+                              x:Uid="Settings"  />
+                <AppBarButton Click="{x:Bind ViewModel.GotoPin}" 
+                              x:Uid="Pin2"  />
+                <AppBarButton Click="{x:Bind ViewModel.GotoAbout}"
+                              x:Uid="About" />
+                <AppBarButton Click="{x:Bind ViewModel.GoToVersionHistory}"
+                              x:Uid="VersionHistory" />
+            </controls:PageHeader.SecondaryCommands>
+        </controls:PageHeader>
+
+        <ScrollViewer RelativePanel.AlignLeftWithPanel="True" 
+                      RelativePanel.AlignRightWithPanel="True" 
+                      RelativePanel.Below="pageHeader" 
+                      ScrollViewer.VerticalScrollBarVisibility="Auto"
+                      x:Name="scrollViewer">
+            <Grid x:Name="Container"
+                  Margin="20,20,20,20">
+            <StackPanel Orientation="Vertical">
+                <Image Source="{x:Bind ViewModel.SelectedItemData.Image}"
+                       Width ="85"
+                       Height="64"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+                <TextBlock HorizontalAlignment="Left"
+                           x:Uid="Cost"
+                           Style="{StaticResource SubheaderTextBlockStyle}"
+                           Margin="0,20,0,0"/>
+                <Rectangle HorizontalAlignment="Stretch" 
+                           Height="2" 
+                           Margin="0,0,0,10"
+                           Fill="LightGray"/>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Assets/gold.png"
+                           Width="22"
+                           Height="22"
+                           Margin="0,0,10,0"/>
+                    <TextBlock HorizontalAlignment="Left"
+                           FontSize="16"
+                           TextWrapping="Wrap"
+                           Text="{x:Bind ViewModel.SelectedItemData.cost}"/>
+                        <TextBlock HorizontalAlignment="Left"
+                                   Margin="10,0,0,0"
+                                   FontSize="16"
+                                   TextWrapping="Wrap"
+                                   Visibility="{x:Bind ViewModel.SelectedItemData.requiresSecretShop, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                   x:Uid="SecretShop"
+                                   FontStyle="Italic"/>
+                        <TextBlock HorizontalAlignment="Left"
+                                   Margin="10,0,0,0"
+                                   FontSize="16"
+                                   TextWrapping="Wrap"
+                                   Visibility="{x:Bind ViewModel.SelectedItemData.AvailableAtSideShop, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                   x:Uid="SideShop"
+                                   Text="Available at Side Shop"
+                                   FontStyle="Italic"/>
+                    </StackPanel>
+                <TextBlock HorizontalAlignment="Left"
+                           x:Uid="Details"
+                           Style="{StaticResource SubheaderTextBlockStyle}"
+                           Margin="0,20,0,0"/>
+                <Rectangle HorizontalAlignment="Stretch" 
+                           Height="2"
+                           Fill="LightGray"/>
+                
+
+                <AppStudio:HtmlBlock Source="{x:Bind ViewModel.SelectedItemData.desc}"
+                                     HorizontalAlignment="Left"
+                                     FontSize="16"
+                                     Visibility="{x:Bind ViewModel.SelectedItemData.desc, Converter={StaticResource StringToVisibilityConverter}}"/>
+
+                <AppStudio:HtmlBlock Source="{x:Bind ViewModel.SelectedItemData.attrib}"
+                                     HorizontalAlignment="Left"
+                                     FontSize="16"
+                                     Visibility="{x:Bind ViewModel.SelectedItemData.attrib, Converter={StaticResource StringToVisibilityConverter}}"
+                                     Foreground="#FF5B5D5B"/>
+
+                <AppStudio:HtmlBlock Source="{x:Bind ViewModel.SelectedItemData.notes}"
+                                     FontSize="16"
+                                     HorizontalAlignment="Left"
+                                     Visibility="{x:Bind ViewModel.SelectedItemData.notes, Converter={StaticResource StringToVisibilityConverter}}"
+                                     Foreground="#FF2D6E1D"/>
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="22"
+                               Width="22"
+                               Source="/Assets/mana.png"
+                               Margin="0,10,10,0"
+                               Visibility="{x:Bind ViewModel.SelectedItemData.Mc, Converter={StaticResource StringToVisibilityConverter}}"/>
+                    <TextBlock Text="{x:Bind ViewModel.SelectedItemData.Mc}"
+                               Visibility="{x:Bind ViewModel.SelectedItemData.Mc, Converter={StaticResource StringToVisibilityConverter}}"
+                               VerticalAlignment="Bottom"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="22"
+                               Width="22"
+                               Source="/Assets/cooldown.png"
+                               Margin="0,10,10,0"
+                               Visibility="{x:Bind ViewModel.SelectedItemData.Cd, Converter={StaticResource StringToVisibilityConverter}}"/>
+
+                    <TextBlock Text="{x:Bind ViewModel.SelectedItemData.Cd}"
+                               Visibility="{x:Bind ViewModel.SelectedItemData.Cd, Converter={StaticResource StringToVisibilityConverter}}"
+                               VerticalAlignment="Bottom"/>
+                </StackPanel>
+                <TextBlock Text="{x:Bind ViewModel.SelectedItemData.lore}"
+                           FontSize="13"
+                           Margin="0,5,0,0"
+                           Visibility="{x:Bind ViewModel.SelectedItemData.lore, Converter={StaticResource StringToVisibilityConverter}}"
+                           Foreground="#FF676867" 
+                           FontStyle="Italic"
+                           TextWrapping="Wrap"/>
+                <StackPanel x:Name="panelBuildsFrom"
+                            Visibility="{x:Bind ViewModel.ShowPanelBuildsFrom}">
+                    <TextBlock HorizontalAlignment="Left"
+                           x:Uid="Builds_From"
+                           Style="{StaticResource SubheaderTextBlockStyle}"
+                           Margin="0,20,0,0"/>
+                    <Rectangle HorizontalAlignment="Stretch" 
+                               Height="2" 
+                               Margin="0,0,0,10" 
+                               Fill="LightGray"/>
+                    <ListView x:Name="lvBuildsFrom"
+                              ItemTemplate="{StaticResource BuildsFromList}" 
+                              ItemsSource="{x:Bind ViewModel.SelectedItemData.buildsFromList}"
+                              Tapped="{x:Bind ViewModel.ItemTapped}">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="Padding" 
+                                        Value="0"/>
+                                <Setter Property="Margin"
+                                        Value="0,2,0,2"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                    </ListView>
+                </StackPanel>
+                <StackPanel x:Name="panelBuildsInto"
+                            Visibility="{x:Bind ViewModel.ShowPanelBuildsInto}">
+                    <TextBlock HorizontalAlignment="Left"
+                           x:Uid="Builds_Into"
+                           Style="{StaticResource SubheaderTextBlockStyle}"
+                           Margin="0,20,0,0"/>
+                    <Rectangle HorizontalAlignment="Stretch" 
+                               Height="2" 
+                               Margin="0,0,0,10" 
+                               Fill="LightGray"/>
+                    <ListView x:Name="lvBuildsInto" 
+                              ItemTemplate="{StaticResource BuildsIntoList}"
+                              ItemsSource="{x:Bind ViewModel.SelectedItemData.buildsIntoList}"
+                              Tapped="{x:Bind ViewModel.ItemTapped}">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="Padding" 
+                                        Value="0"/>
+                                <Setter Property="Margin"
+                                        Value="0,2,0,2"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                    </ListView>
+                </StackPanel>
+            </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </RelativePanel>
+</Page>

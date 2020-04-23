@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About.Label" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="About1.Header" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AttackType.Text" xml:space="preserve">
+    <value>Attack Type</value>
+  </data>
+  <data name="Biography.Text" xml:space="preserve">
+    <value>Biography</value>
+  </data>
+  <data name="Builds_From.Text" xml:space="preserve">
+    <value>Builds From</value>
+  </data>
+  <data name="Builds_Into.Text" xml:space="preserve">
+    <value>Builds Into</value>
+  </data>
+  <data name="Cost.Text" xml:space="preserve">
+    <value>Cost</value>
+  </data>
+  <data name="Heroes2.Content" xml:space="preserve">
+    <value>Heroes</value>
+  </data>
+  <data name="Heroes1.Text" xml:space="preserve">
+    <value>Heroes</value>
+  </data>
+  <data name="Date.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Detail.Content" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="Details.Text" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Feedback.Text" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="Heroes.Header" xml:space="preserve">
+    <value>Heroes</value>
+  </data>
+  <data name="Items.Header" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="Language.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Leaderboards.Text" xml:space="preserve">
+    <value>Leaderboards</value>
+  </data>
+  <data name="LightTheme.Header" xml:space="preserve">
+    <value>Requested Application Theme</value>
+  </data>
+  <data name="LightTheme.OnContent" xml:space="preserve">
+    <value>Current theme is Light</value>
+  </data>
+  <data name="LightThemeOffContent" xml:space="preserve">
+    <value>Current theme is Dark</value>
+  </data>
+  <data name="ProvideYourSuggestion_.Text" xml:space="preserve">
+    <value>Provide your suggestion or report a problem to make application better!</value>
+  </data>
+  <data name="ReadingView.Header" xml:space="preserve">
+    <value>Show Update News In Reading View</value>
+  </data>
+  <data name="ReadingView.OffContent" xml:space="preserve">
+    <value>Reading View disabled</value>
+  </data>
+  <data name="ReadingView.OnContent" xml:space="preserve">
+    <value>Reading View enabled</value>
+  </data>
+  <data name="RestartApplication.Text" xml:space="preserve">
+    <value>Please restart the application for the changes to take effect</value>
+  </data>
+  <data name="Roles.Text" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="SearchForTitle.PlaceholderText" xml:space="preserve">
+    <value>Search for title</value>
+  </data>
+  <data name="Send.Content" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="SendFeedback.Content" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Settings1.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Settings2.Header" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Settings.Content" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="ShellDrawnBackButton.Header" xml:space="preserve">
+    <value>Shell-drawn Back Button</value>
+  </data>
+  <data name="ShellDrawnBackButton.OffContent" xml:space="preserve">
+    <value>Back button is in Page Header</value>
+  </data>
+  <data name="ShellDrawnBackButton.OnContent" xml:space="preserve">
+    <value>Back button in Title/TaskBar</value>
+  </data>
+  <data name="Show_.Text" xml:space="preserve">
+    <value>Show :</value>
+  </data>
+  <data name="Skills.Text" xml:space="preserve">
+    <value>Skills</value>
+  </data>
+  <data name="v5" xml:space="preserve">
+    <value>Application tile background color changed to transparent</value>
+  </data>
+  <data name="v4" xml:space="preserve">
+    <value>Reading View added for Dota 2 Update News</value>
+  </data>
+  <data name="v3" xml:space="preserve">
+    <value>Added Turkish language support</value>
+  </data>
+  <data name="v0" xml:space="preserve">
+    <value>Updated various translations</value>
+  </data>
+  <data name="v1" xml:space="preserve">
+    <value>GUI improvements</value>
+  </data>
+  <data name="v2" xml:space="preserve">
+    <value>Bug fixes and improvements</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="World_Leaderboards.Content" xml:space="preserve">
+    <value>World Leaderboards</value>
+  </data>
+  <data name="v6" xml:space="preserve">
+    <value>Version History added to Settings page</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="InternetConnectionError" xml:space="preserve">
+    <value>Dota2 Handbook application needs internet connection! Check your internet connection and try again.</value>
+  </data>
+  <data name="VersionHistory.Label" xml:space="preserve">
+    <value>Version History</value>
+  </data>
+  <data name="VersionHistory1.Header" xml:space="preserve">
+    <value>Version History</value>
+  </data>
+  <data name="Items1.Text" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="Items2.Content" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="SearchForItem.PlaceholderText" xml:space="preserve">
+    <value>Search for item</value>
+  </data>
+  <data name="v7" xml:space="preserve">
+    <value>Search option added to Heroes and Items pages</value>
+  </data>
+  <data name="Information_ApplicationName" xml:space="preserve">
+    <value>Application Name</value>
+  </data>
+  <data name="Information_ApplicationVersion" xml:space="preserve">
+    <value>Application Version</value>
+  </data>
+  <data name="Information_Culture" xml:space="preserve">
+    <value>Culture</value>
+  </data>
+  <data name="Information_DeviceFamily" xml:space="preserve">
+    <value>Device Family</value>
+  </data>
+  <data name="Information_DeviceManufacturer" xml:space="preserve">
+    <value>Device Manufacturer</value>
+  </data>
+  <data name="Information_DeviceModel" xml:space="preserve">
+    <value>Device Model</value>
+  </data>
+  <data name="Information_OperatingSystem" xml:space="preserve">
+    <value>Operating System</value>
+  </data>
+  <data name="Information_OperatingSystemArchitecture" xml:space="preserve">
+    <value>Operating System Architecture</value>
+  </data>
+  <data name="Information_OperatingSystemVersion" xml:space="preserve">
+    <value>Operating System Version</value>
+  </data>
+  <data name="SystemInformation.Content" xml:space="preserve">
+    <value>Add System &amp; Device Information (no personal data)</value>
+  </data>
+  <data name="Refresh.Icon" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Refresh.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Share.Height" xml:space="preserve">
+    <value>48</value>
+  </data>
+  <data name="Share.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="Share.Width" xml:space="preserve">
+    <value>48</value>
+  </data>
+  <data name="ShareApplication.Content" xml:space="preserve">
+    <value>Share Application</value>
+  </data>
+  <data name="ShareApplication.Margin" xml:space="preserve">
+    <value>0,10,0,0</value>
+  </data>
+  <data name="v8" xml:space="preserve">
+    <value>Refresh button added to News page</value>
+  </data>
+  <data name="v9" xml:space="preserve">
+    <value>Share button added to News Detail pages</value>
+  </data>
+  <data name="SearchForHero.PlaceholderText" xml:space="preserve">
+    <value>Search for hero</value>
+  </data>
+  <data name="v10" xml:space="preserve">
+    <value>Auto suggestion text box added to Heroes and Items pages</value>
+  </data>
+  <data name="v11" xml:space="preserve">
+    <value>Feedback Hub support added</value>
+  </data>
+  <data name="LaunchFeedbackHubButton.Content" xml:space="preserve">
+    <value>Launch Feedback Hub</value>
+  </data>
+  <data name="LaunchFeedbackHubButton.HorizontalAlignment" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="LaunchFeedbackHubButton.Margin" xml:space="preserve">
+    <value>0,15,0,0</value>
+  </data>
+  <data name="UseFeedbackHub.FontSize" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="UseFeedbackHub.FontStyle" xml:space="preserve">
+    <value>Italic</value>
+  </data>
+  <data name="UseFeedbackHub.Text" xml:space="preserve">
+    <value>Use Feedback Hub</value>
+  </data>
+  <data name="UseEMail.FontSize" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="UseEMail.FontStyle" xml:space="preserve">
+    <value>Italic</value>
+  </data>
+  <data name="UseEMail.Text" xml:space="preserve">
+    <value>Use E-Mail</value>
+  </data>
+  <data name="FirstRelease" xml:space="preserve">
+    <value>First Release</value>
+  </data>
+  <data name="News.Text" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="News2.Header" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="Updates.Header" xml:space="preserve">
+    <value>Updates</value>
+  </data>
+  <data name="v12" xml:space="preserve">
+    <value>News and Updates seperated</value>
+  </data>
+  <data name="v13" xml:space="preserve">
+    <value>Game version info added to Tournaments</value>
+  </data>
+  <data name="SecretShop.Text" xml:space="preserve">
+    <value>Available at Secret Shop</value>
+  </data>
+  <data name="SideShop.Text" xml:space="preserve">
+    <value>Available at Side Shop</value>
+  </data>
+  <data name="v14" xml:space="preserve">
+    <value>Side / secret shop info added to Item Detail page</value>
+  </data>
+  <data name="Cooldown" xml:space="preserve">
+    <value>COOLDOWN</value>
+  </data>
+  <data name="ManaCost" xml:space="preserve">
+    <value>MANA COST</value>
+  </data>
+  <data name="Pin.Header" xml:space="preserve">
+    <value>Pin</value>
+  </data>
+  <data name="Pin1.Text" xml:space="preserve">
+    <value>You can pin pages to your start screen</value>
+  </data>
+  <data name="Pin2.Label" xml:space="preserve">
+    <value>Pin</value>
+  </data>
+  <data name="News3.Content" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="Refresh1.Content" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Refresh1.Margin" xml:space="preserve">
+    <value>5,5,10,5</value>
+  </data>
+  <data name="NotPinnedPage" xml:space="preserve">
+    <value>Not pinned</value>
+  </data>
+  <data name="PinnedPage" xml:space="preserve">
+    <value>Pinned</value>
+  </data>
+  <data name="PinIcon.Height" xml:space="preserve">
+    <value>48</value>
+  </data>
+  <data name="PinIcon.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Pin</value>
+  </data>
+  <data name="PinIcon.Width" xml:space="preserve">
+    <value>48</value>
+  </data>
+  <data name="v15" xml:space="preserve">
+    <value>Pin tile support added</value>
+  </data>
+</root>

@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About.Label" xml:space="preserve">
+    <value>Hakkında</value>
+  </data>
+  <data name="About1.Header" xml:space="preserve">
+    <value>Hakkında</value>
+  </data>
+  <data name="AttackType.Text" xml:space="preserve">
+    <value>Saldırı Tipi</value>
+  </data>
+  <data name="Biography.Text" xml:space="preserve">
+    <value>Biyografi</value>
+  </data>
+  <data name="Builds_From.Text" xml:space="preserve">
+    <value>Oluştuğu Eşyalar</value>
+  </data>
+  <data name="Builds_Into.Text" xml:space="preserve">
+    <value>Oluşturduğu Eşyalar</value>
+  </data>
+  <data name="Cost.Text" xml:space="preserve">
+    <value>Fiyat</value>
+  </data>
+  <data name="Heroes2.Content" xml:space="preserve">
+    <value>Kahramanlar</value>
+  </data>
+  <data name="Date.Text" xml:space="preserve">
+    <value>Tarih</value>
+  </data>
+  <data name="Detail.Content" xml:space="preserve">
+    <value>Detay</value>
+  </data>
+  <data name="Details.Text" xml:space="preserve">
+    <value>Detaylar</value>
+  </data>
+  <data name="Feedback.Text" xml:space="preserve">
+    <value>Geri Bildirim</value>
+  </data>
+  <data name="Heroes.Header" xml:space="preserve">
+    <value>Kahramanlar</value>
+  </data>
+  <data name="Items.Header" xml:space="preserve">
+    <value>Eşyalar</value>
+  </data>
+  <data name="Language.Text" xml:space="preserve">
+    <value>Dil</value>
+  </data>
+  <data name="Leaderboards.Text" xml:space="preserve">
+    <value>Sıralama</value>
+  </data>
+  <data name="LightTheme.Header" xml:space="preserve">
+    <value>Uygulama Tema Rengi</value>
+  </data>
+  <data name="LightTheme.OnContent" xml:space="preserve">
+    <value>Şu an Aydınlık</value>
+  </data>
+  <data name="LightThemeOffContent" xml:space="preserve">
+    <value>Şu an Karanlık</value>
+  </data>
+  <data name="News.Text" xml:space="preserve">
+    <value>Haberler</value>
+  </data>
+  <data name="ProvideYourSuggestion_.Text" xml:space="preserve">
+    <value>Uygulamayı daha iyi hale getirmek için önerilerinizi veya sorununuzu bildirin!</value>
+  </data>
+  <data name="ReadingView.Header" xml:space="preserve">
+    <value>Güncelleme Haberlerini Okuma Modu'nda Göster</value>
+  </data>
+  <data name="ReadingView.OffContent" xml:space="preserve">
+    <value>Okuma Modu Devre Dışı</value>
+  </data>
+  <data name="ReadingView.OnContent" xml:space="preserve">
+    <value>Okuma Modu Etkin</value>
+  </data>
+  <data name="RestartApplication.Text" xml:space="preserve">
+    <value>Değişikliklerin uygulanması için lütfen uygulamayı yeniden başlatın</value>
+  </data>
+  <data name="Roles.Text" xml:space="preserve">
+    <value>Roller</value>
+  </data>
+  <data name="SearchForTitle.PlaceholderText" xml:space="preserve">
+    <value>Başlık ara</value>
+  </data>
+  <data name="Send.Content" xml:space="preserve">
+    <value>Gönder</value>
+  </data>
+  <data name="SendFeedback.Content" xml:space="preserve">
+    <value>Geri Bildirim</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="Settings1.Text" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="Settings2.Header" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="ShellDrawnBackButton.Header" xml:space="preserve">
+    <value>Geri Butonu Pozisyonu</value>
+  </data>
+  <data name="ShellDrawnBackButton.OffContent" xml:space="preserve">
+    <value>Geri Butonu Sayfa Başlığında</value>
+  </data>
+  <data name="ShellDrawnBackButton.OnContent" xml:space="preserve">
+    <value>Geri Butonu Başlık/Görev Çubuğunda</value>
+  </data>
+  <data name="Show_.Text" xml:space="preserve">
+    <value>Göster :</value>
+  </data>
+  <data name="Skills.Text" xml:space="preserve">
+    <value>Yetenekler</value>
+  </data>
+  <data name="v5" xml:space="preserve">
+    <value>Uygulamanın kutucuk (tile) arka plan rengi transparan olarak değiştirildi</value>
+  </data>
+  <data name="v4" xml:space="preserve">
+    <value>Dota 2 güncelleme haberleri için Okuma Modu eklendi</value>
+  </data>
+  <data name="v3" xml:space="preserve">
+    <value>Türkçe dil desteği eklendi</value>
+  </data>
+  <data name="v0" xml:space="preserve">
+    <value>Çeşitli çeviriler güncellendi</value>
+  </data>
+  <data name="v1" xml:space="preserve">
+    <value>Arayüz iyileştirmeleri</value>
+  </data>
+  <data name="v2" xml:space="preserve">
+    <value>Hata düzeltmeleri &amp; iyileştirmeler</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Versiyon</value>
+  </data>
+  <data name="World_Leaderboards.Content" xml:space="preserve">
+    <value>Dünya Sıralaması</value>
+  </data>
+  <data name="v6" xml:space="preserve">
+    <value>Ayarlar sayfasına Sürüm Geçmişi eklendi</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Yükleniyor</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="InternetConnectionError" xml:space="preserve">
+    <value>Dota2 Handbook uygulamasına internete bağlanamıyor! İnternet bağlantınızı kontrol edin ve tekrar deneyin</value>
+  </data>
+  <data name="VersionHistory.Label" xml:space="preserve">
+    <value>Sürüm Geçmişi</value>
+  </data>
+  <data name="Settings.Content" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="VersionHistory1.Header" xml:space="preserve">
+    <value>Sürüm Geçmişi</value>
+  </data>
+  <data name="Heroes1.Text" xml:space="preserve">
+    <value>Kahramanlar</value>
+  </data>
+  <data name="Items1.Text" xml:space="preserve">
+    <value>Eşyalar</value>
+  </data>
+  <data name="Items2.Content" xml:space="preserve">
+    <value>Eşyalar</value>
+  </data>
+  <data name="SearchForItem.PlaceholderText" xml:space="preserve">
+    <value>Eşya ara</value>
+  </data>
+  <data name="v7" xml:space="preserve">
+    <value>Kahramanlar ve Eşyalar sayfalarına arama seçeneği eklendi</value>
+  </data>
+  <data name="Information_ApplicationName" xml:space="preserve">
+    <value>Uygulama Adı</value>
+  </data>
+  <data name="Information_ApplicationVersion" xml:space="preserve">
+    <value>Uygulama Versiyonu</value>
+  </data>
+  <data name="Information_Culture" xml:space="preserve">
+    <value>Dil Kodu</value>
+  </data>
+  <data name="Information_DeviceFamily" xml:space="preserve">
+    <value>Cihaz Ailesi</value>
+  </data>
+  <data name="Information_DeviceManufacturer" xml:space="preserve">
+    <value>Üretici Firma</value>
+  </data>
+  <data name="Information_DeviceModel" xml:space="preserve">
+    <value>Cihaz Modeli</value>
+  </data>
+  <data name="Information_OperatingSystem" xml:space="preserve">
+    <value>İşletim Sistemi</value>
+  </data>
+  <data name="Information_OperatingSystemArchitecture" xml:space="preserve">
+    <value>İşletim Sistemi Mimarisi</value>
+  </data>
+  <data name="Information_OperatingSystemVersion" xml:space="preserve">
+    <value>İşletim Sistemi Versiyonu</value>
+  </data>
+  <data name="SystemInformation.Content" xml:space="preserve">
+    <value>Sistem ve Cihaz bilgisini de ekle (kişisel bilgi bulunmaz)</value>
+  </data>
+  <data name="Refresh.Icon" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Refresh.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Yenile</value>
+  </data>
+  <data name="Share.Height" xml:space="preserve">
+    <value>48</value>
+  </data>
+  <data name="Share.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="Share.Width" xml:space="preserve">
+    <value>48</value>
+  </data>
+  <data name="ShareApplication.Content" xml:space="preserve">
+    <value>Uygulamayı Paylaş</value>
+  </data>
+  <data name="ShareApplication.Margin" xml:space="preserve">
+    <value>0,10,0,0</value>
+  </data>
+  <data name="v8" xml:space="preserve">
+    <value>Haberler sayfasına Yenile seçeneği eklendi</value>
+  </data>
+  <data name="v9" xml:space="preserve">
+    <value>Haber Detayları sayfalarına Paylaş seçeneği eklendi</value>
+  </data>
+  <data name="SearchForHero.PlaceholderText" xml:space="preserve">
+    <value>Kahraman ara</value>
+  </data>
+  <data name="v10" xml:space="preserve">
+    <value>Kahraman ve Eşya sayfalarına geliştirilmiş arama özelliği eklendi</value>
+  </data>
+  <data name="v11" xml:space="preserve">
+    <value>Feedback Hub desteği eklendi</value>
+  </data>
+  <data name="LaunchFeedbackHubButton.Content" xml:space="preserve">
+    <value>Feedback Hub Çalıştır</value>
+  </data>
+  <data name="LaunchFeedbackHubButton.HorizontalAlignment" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="LaunchFeedbackHubButton.Margin" xml:space="preserve">
+    <value>0,15,0,0</value>
+  </data>
+  <data name="UseFeedbackHub.FontSize" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="UseFeedbackHub.FontStyle" xml:space="preserve">
+    <value>Italic</value>
+  </data>
+  <data name="UseFeedbackHub.Text" xml:space="preserve">
+    <value>Feedback Hub Kullan</value>
+  </data>
+  <data name="UseEMail.FontSize" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="UseEMail.FontStyle" xml:space="preserve">
+    <value>Italic</value>
+  </data>
+  <data name="UseEMail.Text" xml:space="preserve">
+    <value>E-Posta Kullan</value>
+  </data>
+  <data name="FirstRelease" xml:space="preserve">
+    <value>İlk Sürüm</value>
+  </data>
+  <data name="News2.Header" xml:space="preserve">
+    <value>Haberler</value>
+  </data>
+  <data name="Updates.Header" xml:space="preserve">
+    <value>Güncellemeler</value>
+  </data>
+  <data name="v12" xml:space="preserve">
+    <value>Haberler ve Güncellemeler ayrı sekmelere bölündü</value>
+  </data>
+  <data name="v13" xml:space="preserve">
+    <value>Turnuva bilgileride oyun versiyonu bilgisi eklendi</value>
+  </data>
+  <data name="SecretShop.Text" xml:space="preserve">
+    <value>Gizli Dükkanda mevcut</value>
+  </data>
+  <data name="SideShop.Text" xml:space="preserve">
+    <value>Yan Dükkanda mevcut</value>
+  </data>
+  <data name="v14" xml:space="preserve">
+    <value>Eşya sayfasına yan / gizli dükkan bilgisi eklendi</value>
+  </data>
+  <data name="Cooldown" xml:space="preserve">
+    <value>DOLUM SÜRESİ</value>
+  </data>
+  <data name="ManaCost" xml:space="preserve">
+    <value>MANA BEDELİ</value>
+  </data>
+  <data name="Pin.Header" xml:space="preserve">
+    <value>Sabitle</value>
+  </data>
+  <data name="Pin1.Text" xml:space="preserve">
+    <value>Sayfaları başlat menüsüne sabitleyebilirsiniz</value>
+  </data>
+  <data name="Pin2.Label" xml:space="preserve">
+    <value>Sabitle</value>
+  </data>
+  <data name="News3.Content" xml:space="preserve">
+    <value>Haberler</value>
+  </data>
+  <data name="Refresh1.Content" xml:space="preserve">
+    <value>Yenile</value>
+  </data>
+  <data name="Refresh1.Margin" xml:space="preserve">
+    <value>5,5,10,5</value>
+  </data>
+  <data name="NotPinnedPage" xml:space="preserve">
+    <value>Sabit değil</value>
+  </data>
+  <data name="PinnedPage" xml:space="preserve">
+    <value>Sabit</value>
+  </data>
+  <data name="PinIcon.Height" xml:space="preserve">
+    <value>48</value>
+  </data>
+  <data name="PinIcon.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Sabitle</value>
+  </data>
+  <data name="PinIcon.Width" xml:space="preserve">
+    <value>48</value>
+  </data>
+  <data name="v15" xml:space="preserve">
+    <value>Sayfa sabitleme desteği eklendi</value>
+  </data>
+</root>

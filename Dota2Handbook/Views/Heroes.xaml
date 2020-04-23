@@ -1,0 +1,110 @@
+﻿<Page
+    x:Class="Dota2Handbook.Views.Heroes"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm ="using:Dota2Handbook.ViewModels"
+    xmlns:data="using:Dota2Handbook.Data"
+    xmlns:util="using:Dota2Handbook.Utilities"
+    xmlns:controls="using:Template10.Controls"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:HeroesViewModel x:Name="ViewModel" />
+    </Page.DataContext>
+
+    <Page.Resources>
+        <CollectionViewSource x:Name="HeroesCVS"
+                              IsSourceGrouped="True"
+                              Source="{x:Bind ViewModel.GroupedHeroList, Mode=OneWay}"/>
+
+        <DataTemplate x:Name="HeroGridViewTemplate"
+                      x:DataType="data:Hero">
+            <Grid BorderBrush="WhiteSmoke" 
+                  BorderThickness="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Image Width ="100"
+                       Height="56"
+                       Margin="5,0,5,0"
+                       Source="{x:Bind LargeImage}"/>
+
+                <TextBlock Grid.Row="1"
+                           Text="{x:Bind Localized_Name}" 
+                           Style="{ThemeResource BodyTextBlockStyle}"
+                           HorizontalAlignment="Center"
+                           Margin="0,3,0,0"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <controls:PageHeader x:Name="pageHeader"
+                             x:Uid="Heroes2"
+                             Height="48"
+                             IsDynamicOverflowEnabled="False">
+            <RelativePanel.AlignTopWithPanel>True</RelativePanel.AlignTopWithPanel>
+            <RelativePanel.AlignRightWithPanel>True</RelativePanel.AlignRightWithPanel>
+            <RelativePanel.AlignLeftWithPanel>True</RelativePanel.AlignLeftWithPanel>
+            <controls:PageHeader.PrimaryCommands>
+                <AppBarButton x:Uid="PinIcon"
+                              Click="{x:Bind ViewModel.Pin}">
+                    <AppBarButton.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets"
+                                  Glyph="&#xE718;"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+            </controls:PageHeader.PrimaryCommands>
+            <controls:PageHeader.SecondaryCommands>
+                <AppBarButton Click="{x:Bind ViewModel.GotoSettings}" 
+                              x:Uid="Settings"  />
+                <AppBarButton Click="{x:Bind ViewModel.GotoPin}" 
+                              x:Uid="Pin2"  />
+                <AppBarButton Click="{x:Bind ViewModel.GotoAbout}"
+                              x:Uid="About" />
+                <AppBarButton Click="{x:Bind ViewModel.GoToVersionHistory}"
+                              x:Uid="VersionHistory" />
+            </controls:PageHeader.SecondaryCommands>
+        </controls:PageHeader>
+        <StackPanel x:Name="panelTop"
+                    RelativePanel.Below="pageHeader"
+                    RelativePanel.AlignLeftWithPanel="True"
+                    RelativePanel.AlignRightWithPanel="True"
+                    Margin="15,10,15,15">
+            <AutoSuggestBox x:Uid="SearchForHero"
+                            QueryIcon="Find"
+                            TextChanged="{x:Bind ViewModel.AutoSuggestBox_TextChanged}"
+                            Text="{Binding Filter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            
+        </StackPanel>
+        <ScrollViewer RelativePanel.AlignLeftWithPanel="True"
+                      RelativePanel.AlignRightWithPanel="True"
+                      RelativePanel.Below="panelTop"
+                      ScrollViewer.VerticalScrollBarVisibility="Auto"
+                      Margin="5,0,0,0">
+            <GridView ShowsScrollingPlaceholders="True"
+                      SelectionMode="Single"
+                      IsItemClickEnabled="True"
+                      ItemClick="{x:Bind ViewModel.SelectedHeroChanged}"
+                      ItemTemplate="{StaticResource HeroGridViewTemplate}"
+                      ItemsSource="{x:Bind HeroesCVS.View}">
+                <GridView.GroupStyle>
+                    <GroupStyle >
+                        <GroupStyle.HeaderTemplate>
+                            <DataTemplate x:DataType="util:GroupInfoList">
+                                <TextBlock Text="{Binding Key}" 
+                                           Style="{ThemeResource TitleTextBlockStyle}"/>
+                            </DataTemplate>
+                        </GroupStyle.HeaderTemplate>
+                    </GroupStyle>
+                </GridView.GroupStyle>
+            </GridView>
+        </ScrollViewer>
+    </RelativePanel>
+</Page>

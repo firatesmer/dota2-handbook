@@ -1,0 +1,140 @@
+﻿<Page
+    x:Class="Dota2Handbook.Views.Items"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm ="using:Dota2Handbook.ViewModels"
+    xmlns:data="using:Dota2Handbook.Data"
+    xmlns:util="using:Dota2Handbook.Utilities"
+    xmlns:controls="using:Template10.Controls"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:ItemsViewModel x:Name="ViewModel" />
+    </Page.DataContext>
+
+    <Page.Resources>
+        <CollectionViewSource x:Name="ItemsCVS"
+                              IsSourceGrouped="True"
+                              Source="{x:Bind ViewModel.GroupedItemList, Mode=OneWay}"/>
+
+        <DataTemplate x:Name="ItemGridViewTemplate"
+                      x:DataType="data:Item">
+            <Grid BorderBrush="WhiteSmoke" 
+                  BorderThickness="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="90" />
+                </Grid.RowDefinitions>
+
+                <Image Width ="85"
+                       Height="64"
+                       Margin="5,5,5,5"
+                       Source="{x:Bind Image}"/>
+
+                <Grid Grid.Row="1"
+                      Margin="0,5,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Margin="0,3,0,0"
+                               Text="{x:Bind localized_name}"
+                               TextWrapping="WrapWholeWords"
+                               HorizontalAlignment="Center"
+                               Grid.ColumnSpan="2"
+                               Style="{ThemeResource BodyTextBlockStyle}"/>
+
+                    <TextBlock Text="{x:Bind cost}"
+                               Grid.Row="1"
+                               Grid.Column="0"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"
+                               FontSize="14"
+                               Style="{StaticResource CaptionTextBlockStyle}"/>
+                    <Image Source="/Assets/gold.png"
+                           Grid.Row="1"
+                           Grid.Column="1"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Bottom"
+                           Width="22"
+                           Height="22"
+                           Margin="3,0,0,0"/>
+                </Grid>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <controls:PageHeader x:Name="pageHeader"
+                             x:Uid="Items2">
+            <RelativePanel.AlignTopWithPanel>True</RelativePanel.AlignTopWithPanel>
+            <RelativePanel.AlignRightWithPanel>True</RelativePanel.AlignRightWithPanel>
+            <RelativePanel.AlignLeftWithPanel>True</RelativePanel.AlignLeftWithPanel>
+            <controls:PageHeader.PrimaryCommands>
+                <AppBarButton x:Uid="PinIcon"
+                              Click="{x:Bind ViewModel.Pin}">
+                    <AppBarButton.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets"
+                                  Glyph="&#xE718;"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+            </controls:PageHeader.PrimaryCommands>
+            <controls:PageHeader.SecondaryCommands>
+                <AppBarButton Click="{x:Bind ViewModel.GotoSettings}" 
+                              x:Uid="Settings"  />
+                <AppBarButton Click="{x:Bind ViewModel.GotoPin}" 
+                              x:Uid="Pin2"  />
+                <AppBarButton Click="{x:Bind ViewModel.GotoAbout}"
+                              x:Uid="About" />
+                <AppBarButton Click="{x:Bind ViewModel.GoToVersionHistory}"
+                              x:Uid="VersionHistory" />
+            </controls:PageHeader.SecondaryCommands>
+        </controls:PageHeader>
+        <StackPanel x:Name="panelTop"
+                    RelativePanel.Below="pageHeader"
+                    RelativePanel.AlignLeftWithPanel="True"
+                    RelativePanel.AlignRightWithPanel="True"
+                    Margin="15,10,15,15">
+            <AutoSuggestBox x:Uid="SearchForItem"
+                            QueryIcon="Find"
+                            TextChanged="{x:Bind ViewModel.AutoSuggestBox_TextChanged}"
+                            Text="{Binding Filter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+        <ScrollViewer RelativePanel.AlignLeftWithPanel="True"
+                      RelativePanel.AlignRightWithPanel="True"
+                      RelativePanel.Below="panelTop"
+                      ScrollViewer.VerticalScrollBarVisibility="Auto"
+                      Margin="5,0,0,0">
+            <GridView x:Name="gvItems"
+                      RelativePanel.Below="panelTop"
+                      ShowsScrollingPlaceholders="True"
+                      SelectionMode="Single"
+                      IsItemClickEnabled="True"
+                      ItemClick="{x:Bind ViewModel.SelectedItemChanged}"
+                      ItemsSource="{x:Bind ItemsCVS.View}"
+                      ItemTemplate="{StaticResource ItemGridViewTemplate}">
+                <GridView.GroupStyle>
+                    <GroupStyle >
+                        <GroupStyle.HeaderTemplate>
+                            <DataTemplate x:DataType="util:GroupInfoList">
+                                <TextBlock Text="{Binding Key}" 
+                                       Style="{ThemeResource TitleTextBlockStyle}"/>
+                            </DataTemplate>
+                        </GroupStyle.HeaderTemplate>
+                    </GroupStyle>
+                </GridView.GroupStyle>
+            </GridView>
+        </ScrollViewer>
+    </RelativePanel>
+</Page>
